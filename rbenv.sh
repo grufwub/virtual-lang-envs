@@ -6,9 +6,8 @@ RBENV_ROOT="${LIBS_ROOT}/rbenv"
 RB_LATEST="2.5.1"
 
 if [[ -d "${RBENV_ROOT}" ]] ; then
-	echo "${RBENV_ROOT} already exists. To reinstall, please run:"
-	echo "$ sudo rm -rf ${RBENV_ROOT}"
-	echo "Then remove the related 'rbenv' commands in ${LIBS_ROOT}/profile"
+	whiptail --title "Rbenv folder exists" --msgbox "The folder ${RBENV_ROOT} already exists. To reinstall please run:\n$ sudo rm -rf ${RBENV_ROOT}\nThen remove the related 'rbenv' entries in ${LIBS_ROOT}/profile" 10 80
+	exit 0
 fi
 
 # Clone rbenv source
